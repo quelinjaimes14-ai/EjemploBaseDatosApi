@@ -4,6 +4,7 @@ use App\Models\productos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\EmpleadoController;
 
 
 Route::get('/user', function (Request $request) {
@@ -58,4 +59,13 @@ Route::delete('/productos/eliminar', function () {
 
 route::post('/usuario/registrar', [AuthController::class, 'register']);
 
-route::post('/usuario/login', [AuthController::class, 'login']);
+
+
+
+
+//Api de empleados
+
+Route::get('/empleados', [EmpleadoController::class, 'index']);
+
+Route::post('/empleados/crear', [EmpleadoController::class, 'store']);
+
