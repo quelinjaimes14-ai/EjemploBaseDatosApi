@@ -28,10 +28,9 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        //return $request->all();
         Empleado::create([
         'nombre completo' => request()->nombre_completo,
-        'departamenro' => request()->departamento,
+        'departamento' => request()->departamento,
         'antiguedad' => request()->antiguedad,
         'nomina' => request()->nomina,
     ]);
@@ -43,7 +42,7 @@ class EmpleadoController extends Controller
      */
     public function show(Empleado $empleado)
     {
-        
+     return $empleado;   
     }
 
     /**
@@ -59,7 +58,12 @@ class EmpleadoController extends Controller
      */
     public function update(Request $request, Empleado $empleado)
     {
-        //
+        $empleado['nombre completo'] = request()->nombre_completo;
+        $empleado->departamento = request()->departamento;
+        $empleado->antiguedad = request()->antiguedad;
+        $empleado->nomina = request()->nomina;
+        $empleado->save();
+    return Empleado::all();
     }
 
     /**
@@ -67,6 +71,7 @@ class EmpleadoController extends Controller
      */
     public function destroy(Empleado $empleado)
     {
-        //
+        $empleado->delete();
+    return Empleado::all();
     }
 }

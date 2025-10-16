@@ -10,6 +10,6 @@ class Empleado extends Model
         'nombre completo',
         'departamento',
         'antiguedad',
-        'cantnidad',
+        'nomina',
     ];
 }

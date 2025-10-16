@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\productos;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\MatriculaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,3 +37,9 @@ route::put('/producto/actualizar/{id}',
 Route::delete('/producto/eliminar',
 [productosController::class, 'destroy'])
     ->name('productos.destroy');
+
+
+
+//Rutas para el recurso matricula
+Route::get('matriculas',[MatriculaController::class, 'index'])
+    ->name('matriculas.index');

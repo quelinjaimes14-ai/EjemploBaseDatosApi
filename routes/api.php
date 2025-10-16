@@ -66,6 +66,8 @@ route::post('/usuario/registrar', [AuthController::class, 'register']);
 //Api de empleados
 
 Route::get('/empleados', [EmpleadoController::class, 'index']);
-
-Route::post('/empleados/crear', [EmpleadoController::class, 'store']);
+Route::post('/empleados/crear', [EmpleadoController::class, 'store'])->middleware('auth:sanctum');
+Route::get('/empleados/mostrar/{empleado}', [EmpleadoController::class, 'show']);
+Route::put('/empleados/actualizar/{empleado}', [EmpleadoController::class, 'update']) ->middleware('auth:sanctum');
+Route::delete('/empleados/eliminar/{empleado}', [EmpleadoController::class, 'destroy'])->middleware('auth:sanctum');
 
