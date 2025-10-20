@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('telefonos', function (Blueprint $table) {
             $table->id();
+            $table->string('numero', 15);
+            $table->unsignedBigInteger('alumno_id');
+            $table->string('tipo', 20);// móvil, casa, trabajo, etc.
             $table->timestamps();
         });
     }

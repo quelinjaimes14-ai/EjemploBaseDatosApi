@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\ClienteController;
 
 
 Route::get('/user', function (Request $request) {
@@ -71,3 +72,11 @@ Route::get('/empleados/mostrar/{empleado}', [EmpleadoController::class, 'show'])
 Route::put('/empleados/actualizar/{empleado}', [EmpleadoController::class, 'update']) ->middleware('auth:sanctum');
 Route::delete('/empleados/eliminar/{empleado}', [EmpleadoController::class, 'destroy'])->middleware('auth:sanctum');
 
+
+//Api de clientes 
+
+Route::get('/clientes', [ClienteController::class, 'index']);
+Route::post('/clientes/crear', [ClienteController::class, 'store'])->middleware('auth:sanctum');
+Route::get('/clientes/mostrar/{clientes}', [ClienteController::class, 'show']);
+Route::put('/clientes/actualizar/{clientes}', [ClienteController::class, 'update']) ->middleware('auth:sanctum');
+Route::delete('/clientes/eliminar/{clientes}', [EmpleadoController::class, 'destroy'])->middleware('auth:sanctum');

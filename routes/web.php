@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\productos;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\MatriculaController;
+use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\TelefonoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -39,7 +41,14 @@ Route::delete('/producto/eliminar',
     ->name('productos.destroy');
 
 
-
 //Rutas para el recurso matricula
-Route::get('matriculas',[MatriculaController::class, 'index'])
+Route::get('/matriculas',[MatriculaController::class, 'index'])
     ->name('matriculas.index');
+
+//Rutas para el alumno
+Route::get('/alumnos',[AlumnoController::class, 'index'])
+    ->name('alumnos.index');
+
+//rutas para el telefono
+Route::get('/telefonos',[TelefonoController::class, 'index'])
+    ->name('telefonos.index');
