@@ -76,7 +76,7 @@ Route::delete('/empleados/eliminar/{empleado}', [EmpleadoController::class, 'des
 //Api de clientes 
 
 Route::get('/clientes', [ClienteController::class, 'index']);
-Route::post('/clientes/crear', [ClienteController::class, 'store'])->middleware('auth:sanctum');
-Route::get('/clientes/mostrar/{clientes}', [ClienteController::class, 'show']);
-Route::put('/clientes/actualizar/{clientes}', [ClienteController::class, 'update']) ->middleware('auth:sanctum');
-Route::delete('/clientes/eliminar/{clientes}', [EmpleadoController::class, 'destroy'])->middleware('auth:sanctum');
+Route::post('/clientes/crear', [ClienteController::class, 'store']);
+Route::get('/clientes/mostrar/{cliente}', [ClienteController::class, 'show']);
+Route::put('/clientes/actualizar/{cliente}', [ClienteController::class, 'update']);
+Route::delete('/clientes/eliminar/{cliente}', [ClienteController::class, 'destroy']);

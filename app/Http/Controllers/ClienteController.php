@@ -29,13 +29,13 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
          cliente::create([
-        'nombre cliente' => request()->nombre_completo,
+        'nombre cliente' => request()->nombre_cliente,
         'domicilio' => request()->domicilio,
         'email' => request()->email,
         'descuento especial' => request()->descuento_especial,
         'telefono' => request()->telefono,
     ]);
-    return Empleado::all();
+    return cliente::all();
     }
 
     /**
