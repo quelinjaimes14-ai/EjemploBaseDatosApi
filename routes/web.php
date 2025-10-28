@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\MatriculaController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\TelefonoController;
+use App\Http\Controllers\ClasesController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -52,3 +53,14 @@ Route::get('/alumnos',[AlumnoController::class, 'index'])
 //rutas para el telefono
 Route::get('/telefonos',[TelefonoController::class, 'index'])
     ->name('telefonos.index');
+
+Route::get('/alumnos/Telefonos',[AlumnoController::class, 'indexTelefono'])
+    ->name('alumnos.indexTelefono');
+
+//Rutas para las materias de los alumnos    
+Route::get('/alumnos/Materias',[AlumnoController::class, 'indexMaterias'])
+    ->name('alumnos.indexMaterias');
+
+//Ruta para los alumnos por materia
+Route::get('/materias/Alumnos',[ClasesController::class, 'index'])
+    ->name('materias.indexAlumnos'); 

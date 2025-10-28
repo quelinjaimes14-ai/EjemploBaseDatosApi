@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\clases;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class ClasesController extends Controller
      */
     public function index()
     {
-        //
+        $clases = clases::all();
+        return view('Materias.index', compact('clases'));
     }
 
     /**

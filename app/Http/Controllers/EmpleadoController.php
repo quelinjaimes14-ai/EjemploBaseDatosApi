@@ -29,7 +29,7 @@ class EmpleadoController extends Controller
     public function store(Request $request)
     {
         Empleado::create([
-        'nombre completo' => request()->nombre_completo,
+        'nombre_completo' => request()->nombre_completo,
         'departamento' => request()->departamento,
         'antiguedad' => request()->antiguedad,
         'nomina' => request()->nomina,
@@ -58,7 +58,7 @@ class EmpleadoController extends Controller
      */
     public function update(Request $request, Empleado $empleado)
     {
-        $empleado['nombre completo'] = request()->nombre_completo;
+        $empleado['nombre_completo'] = request()->nombre_completo;
         $empleado->departamento = request()->departamento;
         $empleado->antiguedad = request()->antiguedad;
         $empleado->nomina = request()->nomina;

@@ -15,6 +15,7 @@ class MatriculaController extends Controller
         $matriculas = matricula::all();
         return view('matriculas.index', compact('matriculas'));
     }
+        
 
     /**
      * Show the form for creating a new resource.
