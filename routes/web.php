@@ -64,3 +64,18 @@ Route::get('/alumnos/Materias',[AlumnoController::class, 'indexMaterias'])
 //Ruta para los alumnos por materia
 Route::get('/materias/Alumnos',[ClasesController::class, 'index'])
     ->name('materias.indexAlumnos'); 
+
+//Ruta para vueBasico
+Route::get('/vuebasico', function () {
+    return view('vueBasico');
+});
+
+//Ruta para vueListado
+Route::get('/vuelistado', function () {
+    return view('vueListado');
+});
+
+//Ruta para comportamiento
+route::get('/pagina', function () {
+    return view('LandingPage.index');
+});

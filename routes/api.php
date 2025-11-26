@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\ClienteController;
+use App\Models\Alumno;
+use App\Http\Controllers\ComportamientoController;
+use App\Http\Controllers\MensajesController;
 
 
 Route::get('/user', function (Request $request) {
@@ -80,3 +83,16 @@ Route::post('/clientes/crear', [ClienteController::class, 'store']);
 Route::get('/clientes/mostrar/{cliente}', [ClienteController::class, 'show']);
 Route::put('/clientes/actualizar/{cliente}', [ClienteController::class, 'update']);
 Route::delete('/clientes/eliminar/{cliente}', [ClienteController::class, 'destroy']);
+
+//Api de vueListado
+Route::get('/alumnos', function () {
+    return Alumno::all();
+});
+
+//Api de comportamientos
+Route::post('/comportamientos', [\App\Http\Controllers\ComportamientoController::class, 'store']);
+
+//Api de mensajes
+Route::post('mensajes/crear', [MensajesController::class, 'store']);
+Route::get('mensajes', [MensajesController::class, 'index']);
+Route::get('mensajes/ultimos/{n}', [MensajesController::class, 'ultimos']);
